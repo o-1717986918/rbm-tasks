@@ -1,5 +1,7 @@
 # 视觉识别项目提交包
 
+三个 PyTorch 权重均已导出 ONNX，分别位于各项目的 `weights/` 和 `models/` 目录；导出使用 Ultralytics 8.4.35、ONNX opset 12。
+
 本提交包包含两个并列项目，结构一致：
 
 ```text
