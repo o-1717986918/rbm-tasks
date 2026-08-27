@@ -1,0 +1,21 @@
+{
+  "weights": "runs/detect/runs/armor_det_640_v2/weights/best.pt",
+  "data": "datasets/armor_det/data.yaml",
+  "split": "test",
+  "imgsz": 640,
+  "batch": 32,
+  "metrics": {
+    "metrics/precision(B)": 0.9235017937997227,
+    "metrics/recall(B)": 0.8650793650793651,
+    "metrics/mAP50(B)": 0.9094910888551346,
+    "metrics/mAP50-95(B)": 0.6001430826402185,
+    "fitness": 0.6001430826402185
+  },
+  "speed_ms_per_image": {
+    "preprocess": 0.9780951772406855,
+    "inference": 2.2080587406683105,
+    "loss": 0.00027137313292036226,
+    "postprocess": 0.8167141156718571
+  },
+  "fitness": 0.6001430826402185
+}

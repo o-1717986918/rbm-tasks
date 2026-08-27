@@ -1,30 +1,25 @@
 # 视觉识别项目提交包
 
-三个 PyTorch 权重均已导出 ONNX，分别位于各项目的 `weights/` 和 `models/` 目录；导出使用 Ultralytics 8.4.35、ONNX opset 12。
-
-本提交包包含两个并列项目，结构一致：
+本提交包包含两个并列、互相独立的项目：
 
 ```text
-armor_submission/
-├── armor_plate/
-│   ├── weights/     # 模型权重
-│   ├── demos/       # 推理演示视频
-│   ├── dataset/     # 图像、标注、data.yaml
-│   ├── src/         # 训练、推理和数字识别代码
-│   ├── models/      # 可选 ONNX OCR 模型
-│   └── docs/        # 项目说明、来源、划分
-└── meme_cat_shield/
+sub/
+├── armor_plate/       # RoboMaster 装甲板检测 + 数字 1～5 识别（重点）
+│   ├── weights/       # PT 与 ONNX
+│   ├── demo/          # 两段最终演示视频
+│   ├── dataset/       # 检测集与数字分类集
+│   ├── src/           # 构建、训练、评估、推理源码
+│   ├── cpp_tensorrt/  # TensorRT Engine 构建和 C++ 推理
+│   ├── metrics/       # 独立测试与距离分桶结果
+│   └── README.md
+└── meme_cat_shield/   # 妙脆角猫 / 我的刀盾识别
     ├── weights/
     ├── demos/
     ├── datasets/
     ├── scripts/
-    └── docs/
+    └── README.md
 ```
 
-## 项目一：RoboMaster 装甲板
+装甲板项目训练和推理统一为 640×640，并加入实拍数据、背景负类、分组划分、轻量数字 CNN、ONNX、TensorRT/C++ 部署材料。先阅读 [`armor_plate/README.md`](armor_plate/README.md)。
 
-进入 `armor_plate/`，阅读 `docs/README.md`。检测权重、装甲板数据集、两段测试视频、数字识别代码和运行说明均已包含。
-
-## 项目二：妙脆角猫 / 我的刀盾
-
-进入 `meme_cat_shield/`，阅读其 `README.md` 和 `docs/README_Meme_V2.md`。该项目与装甲板项目独立提交，权重、数据、源代码、演示和文档分别存放。
+妙脆角猫/刀盾项目保持独立提交，阅读 [`meme_cat_shield/README.md`](meme_cat_shield/README.md)。
